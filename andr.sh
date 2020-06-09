@@ -64,4 +64,4 @@ pacstrap /mnt base base-devel
 genfstab -pU /mnt >> /mnt/etc/fstab
 
 # Заходим в папку под рутом
-arch-chroot /mnt sh -c "$(curl -fsSL git.io/arch2.sh)"
+arch-chroot /mnt sh -c "$(curl -fsSL raw.githu.com/IcebergCorp/Arch/master/andr2.sh)"
