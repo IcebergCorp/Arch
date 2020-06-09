@@ -58,7 +58,7 @@ mount /dev/sda4 /mnt/home
 echo "Server = http://mirror.yandex.ru/archlinux/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist
 
 # Установка основных пакетов ядра
-pacstrap /mnt base base-devel
+pacstrap /mnt base base-devel linux linux-firmware
 
 # Добавления файоа настроек системы
 genfstab -pU /mnt >> /mnt/etc/fstab
