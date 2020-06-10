@@ -47,4 +47,23 @@ echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 # обновляем пакман
 pacman -Syy
 
+# Ставим иксы и драйвера'
+pacman -S xorg-server xorg-drivers xorg-xinit
+
+echo "Ставим XFCE"
+pacman -S budgie-desktop gnome --noconfirm
+
+echo 'Cтавим DM'
+pacman -S gdm --noconfirm
+systemctl enable gdm
+
+echo 'Ставим шрифты'
+pacman -S ttf-liberation ttf-dejavu --noconfirm 
+
+echo 'Ставим сеть'
+pacman -S networkmanager network-manager-applet ppp --noconfirm
+
+echo 'Подключаем автозагрузку менеджера входа и интернет'
+systemctl enable NetworkManager
+
 exit
