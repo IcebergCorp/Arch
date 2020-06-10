@@ -26,7 +26,7 @@ mkinitcpio -p linux
 
 # Устанавливаем загрузчик'
 pacman -Syy
-pacman -S grub --noconfirm intel-ucode
+pacman -S grub intel-ucode --noconfirm
 grub-install /dev/sda
 
 # Обновляем grub.cfg'
@@ -58,14 +58,14 @@ pacman -Syy
 pacman -S xorg-server xorg-drivers xorg-xinit
 
 echo "Ставим XFCE"
-pacman -S plasma  plasma-wayland-session --noconfirm
+pacman -S plasma kde-applications --noconfirm
 
 echo 'Cтавим DM'
-pacman -S sddm --noconfirm
-systemctl enable sddm
+pacman -S lxdm --noconfirm
+systemctl enable lxdm
 
 echo 'Ставим шрифты'
-pacman -S ttf-liberation ttf-dejavu --noconfirm 
+pacman -S ttf-liberation ttf-freeserif --noconfirm 
 
 echo 'Ставим сеть'
 pacman -S networkmanager network-manager-applet ppp --noconfirm
