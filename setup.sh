@@ -64,4 +64,4 @@ pacstrap /mnt base base-devel linux linux-firmware nano dhcpcd netctl
 genfstab -pU /mnt >> /mnt/etc/fstab
 
 # Заходим в папку под рутом
-arch-chroot /mnt sh -c "$(curl -fsSL raw.github.com/IcebergCorp/Arch/master/andr2.sh)"
+arch-chroot /mnt sh -c "$(curl -fsSL raw.github.com/IcebergCorp/Arch/master/setup2.sh)"
