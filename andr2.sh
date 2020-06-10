@@ -55,14 +55,14 @@ echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 pacman -Syy
 
 # Ставим иксы и драйвера'
-pacman -S xorg-server xorg-drivers xorg-xinit
+pacman -S xorg xorg-server xorg-drivers xorg-xinit
 
 echo "Ставим XFCE"
-pacman -S plasma kde-applications --noconfirm
+pacman -S plasma plasma-wayland-session kde-applications --noconfirm
 
 echo 'Cтавим DM'
-pacman -S lxdm --noconfirm
-systemctl enable lxdm
+pacman -S sddm --noconfirm
+systemctl enable sddm
 
 echo 'Ставим шрифты'
 pacman -S ttf-liberation ttf-freeserif --noconfirm 
