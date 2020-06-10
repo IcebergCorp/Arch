@@ -1,5 +1,6 @@
 #!/bin/bash
 read -p "Введите имя компьютера: " hostname
+read -p "Введите имя пользователя: " username
 
 # Прописываем имя компьютера'
 echo $hostname > /etc/hostname
@@ -34,8 +35,14 @@ grub-mkconfig -o /boot/grub/grub.cfg
 # Ставим программу для Wi-fi'
 pacman -S dialog wpa_supplicant --noconfirm 
 
+echo 'Добавляем пользователя'
+useradd -m -g users -G wheel -s /bin/bash $username
+
 # Создаем root пароль'
 passwd
+
+echo 'Устанавливаем пароль пользователя'
+passwd $username
 
 # Устанавливаем SUDO'
 echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
