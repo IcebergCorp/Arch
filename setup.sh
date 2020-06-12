@@ -29,7 +29,7 @@ timedatectl set-ntp true
   echo;
   echo;
   echo;
-  echo +16.5G;
+  echo +8.5G;
 
   echo n;
   echo p;
